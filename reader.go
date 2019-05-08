@@ -1702,8 +1702,8 @@ type readerMessage struct {
 }
 
 func (r *reader) run(ctx context.Context, offset int64) {
-	const backoffDelayMin = 100 * time.Millisecond
-	const backoffDelayMax = 1 * time.Second
+	const backoffDelayMin = 3 * time.Millisecond
+	const backoffDelayMax = 100 * time.Millisecond
 
 	// This is the reader's main loop, it only ends if the context is canceled
 	// and will keep attempting to reader messages otherwise.
